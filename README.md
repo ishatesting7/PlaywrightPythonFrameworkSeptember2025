@@ -174,3 +174,28 @@ git -v
 git config --global user.name "username"
 
 git config --global user.email sam@gmail.com
+
+git add .
+
+git add <filename>
+
+git commit -m "Added Commit Message"
+
+git push origin main
+
+
+No body push the code directly to main branch 
+- We will create a branch - JIRA_9383
+- You will make the changes - Linked to JIRA_9383
+- You will make sure everything is working as expected
+- You will raise - PR - Pull Request - JIRA_9383 ---> main
+- QA Manager <Approver> - Compare the changes - Merge the change - Reject the PR with Review comments - QA - Work on Review comment - Raise a PR
+
+
+Assignement - 24th Sep 
+- Everyone should do the GIT setup
+- Programs in PY - 
+    - Create a array and print all the value of an array
+    - Create a Numeric Array and Perform the Addition of all value
+    - Create a String Array and Calculate the word count of each word in an Array
+    
