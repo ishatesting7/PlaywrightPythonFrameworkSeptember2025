@@ -137,6 +137,30 @@ Read and write user data to a file
 
 # Readme File
 
+1. Pytest (Most Common)
+
+Status: Fully supported
+Integration: Excellent integration with Playwright
+Command-line execution: Yes
+Fixtures for browser and context: Built-in with pytest-playwright
+Async support: Yes
+You can use pytest-playwright plugin to easily manage browsers, contexts, pages, etc.
+
+2. Unittest (Python’s built-in testing framework)
+
+Status: Supported
+Integration: Manual setup required (no built-in fixtures)
+Command-line execution: Yes
+Async support: Requires manual handling with asyncio
+
+3. Behave (For BDD – Behavior Driven Development)
+
+Status: Supported, but not officially maintained by Playwright team
+Integration: Manual integration with Playwright
+Use case: Gherkin-style BDD tests
+
+# Readme File
+
 Difference Between playwright and pytest-playwright
 
 Playwright
@@ -199,3 +223,9 @@ Assignement - 24th Sep
     - Create a Numeric Array and Perform the Addition of all value
     - Create a String Array and Calculate the word count of each word in an Array
     
+Assignement - 25th Sep  
+    - Create 5 functions -
+        - Function 1 - Will take the input user age, user phone number
+        validate the phone number(10 Digit)
+        - Function 2 - Anagram test, 'silent', 'listen' - if letter are same then display output - Both are anagram
+        - Function 3 - Take garbage data - "932489JSNjsjnd&*@334" - Segregate the data - Numeric, Special Char, Small case, Upper case
