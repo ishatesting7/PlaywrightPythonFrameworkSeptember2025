@@ -176,7 +176,9 @@ Playwright with Pytest
 pip install pytest-playwright
 Adds pytest integration (fixtures and CLI Supports)
 - This install the pytest plugin for Playwright
-- Write tests using pytest structure (def test_)
+- Write tests using pytest structure (def test_) - 
+    - Filename should be starting with test_
+    - Function def test_
 - Use fixture like page, browser, etc without manually launching the browser
 - Easily runs the test with pytest commands
 
@@ -229,3 +231,31 @@ Assignement - 25th Sep
         validate the phone number(10 Digit)
         - Function 2 - Anagram test, 'silent', 'listen' - if letter are same then display output - Both are anagram
         - Function 3 - Take garbage data - "932489JSNjsjnd&*@334" - Segregate the data - Numeric, Special Char, Small case, Upper case
+
+Locators -
+--------
+
+HTML - 
+
+<input type="submit" class="button arc sjand ndsanj ndsan" value="Log In">
+
+TagName
+Attribute
+Value
+
+--> CSS - Locator
+1. If you are aware about ID then the css selector would be - #id
+2. If you are aware about class then the css selector would be - .classname
+    - If there is blank space fill that with . -- .button.arc.sjand.ndsanj.ndsan
+3. If we are aware about tagname and value - Then css selector would be - 
+[attribute = "value"] -- [type = "Submit"]
+4. If we are aware about tagname attribute and value - Then css selector would be - tagname[attribute="value"] -- input[type='submit']
+5. parent -- child -- grandchild -- grandgrandchild
+
+For Validating the Locator - https://selectorshub.com/selectorshub/
+
+#data-testid
+
+--> Xpath - 
+
+
