@@ -13,6 +13,19 @@ def test_orangehrm_login_logout(username, password):
         # Step 1: Open the URL
         page.goto("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login")
 
+        page.locator('input[name="username"]').click()
+        
+        page.click('input[name="username"]')
+        
+        page.fill('input[name="username"]', "DemoUser")
+
+        page.locator().fill('input[name="username"]', "DemoUser")
+
+
+
+
+
+
         page.fill('input[name="username"]', username)
         page.fill('input[name="password"]', password)
         page.click('button[type="submit"]')

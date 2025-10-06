@@ -251,11 +251,72 @@ Value
 [attribute = "value"] -- [type = "Submit"]
 4. If we are aware about tagname attribute and value - Then css selector would be - tagname[attribute="value"] -- input[type='submit']
 5. parent -- child -- grandchild -- grandgrandchild
+6. ID + TagName -- tagName#idvalue
+7. Class + TagName -- tagName.className
 
 For Validating the Locator - https://selectorshub.com/selectorshub/
 
-#data-testid
+
+python - Inbuilt - 
+
+- page.get_by_role() to locate by explicit and implicit accessibility attributes.
+- page.get_by_text() to locate by text content.
+- page.get_by_label() to locate a form control by associated label's text.
+- page.get_by_placeholder() to locate an input by placeholder.
+- page.get_by_alt_text() to locate an element, usually image, by its text alternative.
+- page.get_by_title() to locate an element by its title attribute.
+- page.get_by_test_id() to locate an element based on its data-testid attribute (other attributes can be configured).
+
 
 --> Xpath - 
+
+//input[@name='username']
+
+Relative - 
+    - // - It start with '//'
+    - Xpath inbuilt method
+    - If we are aware about tagname, attribute and value - //tagname[@attribute=
+    'value']
+
+    - Using AND and OR - 
+    - //input[@name="customer.address.street" and @class = 'input']
+    - //input[@name="customer.address.street" or @class = 'input']
+
+    - By text content
+    - //h2[text()='Generate tests with the Playwright Inspector']
+    - //h2[contains(text(),'Generate tests with the Playwright Inspector')]
+    - //h2[normalize-space(text())='Generate tests with the Playwright Inspector']
+
+    - By using contains()
+    - //h2[contains(@id,'intro')]
+
+    - By using starts-with()
+    - //h2[starts-with(@id,'intro')]
+
+    - last()/postition()
+    - (//h2[starts-with(@class,'anc')])[last()]
+    - (//h2[starts-with(@class,'anc')])[4]
+    - (//h2[starts-with(@class,'anc')])[position()=1]
+
+    - Xpath axes
+
+    - Using Parent/Child
+    - //div[@class='theme-doc-markdown markdown']/div/h2
+
+    - Using Ancestor/Descendant
+    - //div[@class='theme-doc-markdown markdown']/descendant::h3
+    - //div[@class='theme-doc-markdown markdown']/ancestor::h3
+
+    - following and preceding
+    - sibling
+
+
+Absolute - 
+    - 
+    - 
+
+
+
+Avoid - /html/body/div[1]/div[3]/div[2]/form/table/tbody/tr[1]/td[2]/input
 
 
