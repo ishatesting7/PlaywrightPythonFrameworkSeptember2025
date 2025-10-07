@@ -14,3 +14,4 @@ def page(browser):
     page = browser.new_page() # New tab is opened
     yield page
     page.close()
+    
