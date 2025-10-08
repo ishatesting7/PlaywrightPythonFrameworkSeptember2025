@@ -317,6 +317,18 @@ Absolute -
 
 
 
+
+
 Avoid - /html/body/div[1]/div[3]/div[2]/form/table/tbody/tr[1]/td[2]/input
 
 
+
+To have the same dependency --> Based on requirement.txt (pip list)
+--> pip install -r requirement.txt
+
+--- Assignment - 7th October --- 
+
+1. Navigate to https://www.saucedemo.com/ and add the product and perform the checkout.
+
+-- Validate the Item Added 
+-- Validate the Order Number
