@@ -36,6 +36,4 @@ def test_selected_day(page):
         checkbox.check()
         page.wait_for_timeout(3000)
         assert checkbox.is_checked() is True
-
-
-
+        
