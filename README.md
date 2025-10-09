@@ -332,3 +332,7 @@ To have the same dependency --> Based on requirement.txt (pip list)
 
 -- Validate the Item Added 
 -- Validate the Order Number
+
+--- Assignment - 9th October --- 
+
+- Resolve tests/test_dropdown_demo.py file and make it working
