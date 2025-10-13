@@ -336,3 +336,8 @@ To have the same dependency --> Based on requirement.txt (pip list)
 --- Assignment - 9th October --- 
 
 - Resolve tests/test_dropdown_demo.py file and make it working
+
+
+# Autosuggest - https://www.wikipedia.org/
+
+Write any text and log all the autosuggestive and click on any one of based on your input

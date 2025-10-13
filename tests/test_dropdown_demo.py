@@ -31,21 +31,25 @@ def test_select_value_from_dropdown(page: Page):
         select_country = country_name.strip()
         dropdown.select_option(label=select_country)
         
-        
+
+  
 def test_select_and_validate_each_country(page: Page):
     page.goto("https://testautomationpractice.blogspot.com/")
-    dropdown = page.locator('select[id="country"]')
-    all_country_name = page.locator('select[id="country"] option')
+    dropdown = page.locator('select#country')
+    all_country_name = page.locator('select#country option')
     count_country = all_country_name.count()
-    
+
     for index in range(count_country):
-        i = all_country_name.nth(index)
-        val = i.get_attribute('value')
-        cou = i.text_content().strip()
-        
+        option = all_country_name.nth(index)
+        val = option.get_attribute('value')
+        country_name = option.text_content().strip()
+
+        if not val:
+            continue
+
         dropdown.select_option(value=val)
-        
         selected_value = dropdown.input_value()
-        assert selected_value == cou
+
+        assert selected_value == val, f"Expected '{val}' but got '{selected_value}' for {country_name}"
 
     
