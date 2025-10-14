@@ -9,6 +9,7 @@ def select_subject(page, subject):
             auto_suggestions.nth(index).click()
         index += 1
 
+# setTimeout(function(){debugger;},6000)
 
 def get_subject_autosuggestion(subject):
     return f"//div[contains(@class, 'subjects-auto-complete__menu-list')]//div[text()='{subject}']"
@@ -17,6 +18,7 @@ def get_subject_autosuggestion(subject):
 def select_subject2(page, subject):
     subject_autosuggestion = page.locator(get_subject_autosuggestion(subject))
     subject_autosuggestion.click()
+    page.wait_for_timeout(2000)
 
 
 def test_autosuggestion(page: Page) -> None:

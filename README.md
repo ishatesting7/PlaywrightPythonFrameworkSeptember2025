@@ -341,3 +341,8 @@ To have the same dependency --> Based on requirement.txt (pip list)
 # Autosuggest - https://www.wikipedia.org/
 
 Write any text and log all the autosuggestive and click on any one of based on your input
+
+
+ - Click on Individual Cross Button of Each Subject - Ref - test_autosuggestion_dropdown2.py
+
+ - https://www.spicejet.com/#sourceautocomplete - Select City from the From and To
