@@ -18,3 +18,6 @@ def test_iframe_demo(page: Page):
     print(left_top_frame.locator("body").inner_text())
     print(middle_top_frame.locator("body").inner_text())
     print(right_top_frame.locator("body").inner_text())
+    
+    demo1 = right_top_frame.locator("#demo")
+    demo1.is_checked()
