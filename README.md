@@ -346,3 +346,25 @@ Write any text and log all the autosuggestive and click on any one of based on y
  - Click on Individual Cross Button of Each Subject - Ref - test_autosuggestion_dropdown2.py
 
  - https://www.spicejet.com/#sourceautocomplete - Select City from the From and To
+
+ PAGE OBJECT MODEL -
+ -----------------
+
+ TEST
+ 
+ PAGES
+
+ UTIL
+ 
+ TESTDATA
+ 
+ CONFTEST.PY
+ PYTEST.INI
+ REQUIREMENT.TXT
+
+
+
+Topics to be discussed on Monday - 
+OOPS Concept for Pytest
+Collection Concept
+
