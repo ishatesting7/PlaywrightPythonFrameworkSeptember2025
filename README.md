@@ -368,3 +368,5 @@ Topics to be discussed on Monday -
 OOPS Concept for Pytest
 Collection Concept
 
+Classes and Object
+class ClassName:
