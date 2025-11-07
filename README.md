@@ -370,3 +370,54 @@ Collection Concept
 
 Classes and Object
 class ClassName:
+
+tests/
+    createAPI.py
+    readAPI.py
+    updateAPI.py
+    deleteAPI.py
+
+data/
+    createAPI.json
+    updateAPI.json
+
+utils/
+    api_helper.py
+    readOTP.py
+    sqldb.py
+
+reports/
+    allureReport
+
+conftest.py
+pytest.ini
+requirement.txt
+readme.md
+
+CRUD
+----
+create 
+read
+update
+delete
+
+POST
+PUT
+PATCH
+GET
+DELETE
+
+HTTP Status Code
+
+1XX
+2XX 
+3XX
+4XX
+5XX 
+
+
+Allure Report 
+------------
+1. pip install allure-pytest
+2. pytest --alluredir=allure-results your_test_file.py
+3. allure serve allure-results
