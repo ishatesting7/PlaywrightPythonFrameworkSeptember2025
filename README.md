@@ -421,3 +421,14 @@ Allure Report
 1. pip install allure-pytest
 2. pytest --alluredir=allure-results your_test_file.py
 3. allure serve allure-results
+
+
+API Frameowork -
+1. Create a booking
+2. Get a booking
+3. Update a booking
+4. Get a booking with updated assertion
+5. Partial Update a booking
+6. Get a booking with partial updated assertion
+7. delete a booking
+8. get a booking

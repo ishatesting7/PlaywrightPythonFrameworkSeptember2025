@@ -42,3 +42,4 @@ def test_create_booking(playwright:Playwright):
 
     assert get_response.status == 200
 
+
