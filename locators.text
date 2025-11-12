@@ -1,0 +1,194 @@
+# Playwright Locators with Python (pytest Framework)
+
+Locators are the way we **find and interact with elements** on a page in Playwright.
+In Python (with `pytest-playwright`), we usually work with the built-in `page` fixture.
+
+---
+
+## 1. General Syntax
+
+```python
+page.locator("selector")        # Define a locator
+page.click("selector")          # Direct action
+page.fill("selector", "text")   # Type into input
+page.get_by_role("role", name="...")  # Preferred semantic locator
+```
+
+---
+
+## 2. Locator Types
+
+### 🔹 A. CSS Selectors (default)
+
+Most flexible, uses standard CSS rules.
+
+```python
+page.click("button[type='submit']")
+page.fill("input[name='username']", "Admin")
+```
+
+✅ Pros: Powerful, precise
+⚠️ Cons: Breaks if DOM structure changes
+
+---
+
+### 🔹 B. Text Selectors
+
+Match elements by visible text.
+
+```python
+page.click("text=Logout")     # Exact text match
+page.click("text=Log")        # Partial text match
+```
+
+---
+
+### 🔹 C. XPath
+
+XPath expressions for DOM navigation.
+
+```python
+page.click("//button[@type='submit']")
+page.fill("//input[@name='password']", "admin123")
+```
+
+⚠️ Not recommended unless necessary → brittle and harder to maintain.
+
+---
+
+### 🔹 D. Role Selectors (ARIA roles) ⭐ Recommended
+
+Use semantic roles for accessibility.
+
+```python
+page.get_by_role("button", name="Login").click()
+page.get_by_role("textbox", name="Username").fill("Admin")
+```
+
+---
+
+### 🔹 E. Placeholder Text
+
+Locate inputs via placeholder attribute.
+
+```python
+page.get_by_placeholder("Username").fill("Admin")
+page.get_by_placeholder("Password").fill("admin123")
+```
+
+---
+
+### 🔹 F. Label-based Selectors
+
+Find input elements by their `<label>`.
+
+```python
+page.get_by_label("Username").fill("Admin")
+page.get_by_label("Password").fill("admin123")
+```
+
+---
+
+### 🔹 G. Alt Text
+
+Find images by `alt` attribute.
+
+```python
+page.get_by_alt_text("OrangeHRM Logo").click()
+```
+
+---
+
+### 🔹 H. Title Attribute
+
+```python
+page.get_by_title("My Profile").click()
+```
+
+---
+
+### 🔹 I. Test IDs (Best Practice in Automation)
+
+If developers add `data-testid="xyz"`, use:
+
+```python
+page.get_by_test_id("login-button").click()
+```
+
+Stable, unaffected by UI/DOM changes
+
+---
+
+## 3. Locator Chaining
+
+Playwright allows chaining locators for nested elements:
+
+```python
+row = page.locator(".oxd-table-row").nth(0)
+row.locator("text=Edit").click()
+```
+
+---
+
+## 4. Assertions with Locators
+
+```python
+# Check visibility
+assert page.locator("text=Dashboard").is_visible()
+
+# Count elements
+assert page.locator(".oxd-table-row").count() > 0
+
+# Inner text
+assert page.locator("h6").inner_text() == "Dashboard"
+```
+
+---
+
+## 5. Waits with Locators
+
+Locators are auto-waiting → no need for explicit sleeps.
+
+```python
+page.wait_for_selector("text=Dashboard")
+```
+
+---
+
+## 6. Pytest Integration Example
+
+```python
+import pytest
+
+def test_login_logout(page):
+    page.goto("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login")
+
+    # Using recommended locators
+    page.get_by_placeholder("Username").fill("Admin")
+    page.get_by_placeholder("Password").fill("admin123")
+    page.get_by_role("button", name="Login").click()
+
+    assert page.get_by_text("Dashboard").is_visible()
+
+    # Logout
+    page.get_by_role("img", name="profile picture").click()
+    page.get_by_text("Logout").click()
+
+    assert page.get_by_placeholder("Username").is_visible()
+```
+
+---
+
+## 7. Best Practices
+
+* Prefer **semantic locators**: `get_by_role`, `get_by_label`, `get_by_placeholder`, `get_by_test_id`
+* Use **CSS/XPath only as fallback**
+* Keep locators in **Page Object Model (POM)** for reusability
+* Avoid `time.sleep()` → Playwright auto-waits
+
+---
+
+Summary:
+Playwright locators in Python support **CSS, XPath, text, and 
+accessibility-based queries**. For robust tests in pytest frameworks, 
+use **role, label, placeholder, and test ID** locators whenever possible.
