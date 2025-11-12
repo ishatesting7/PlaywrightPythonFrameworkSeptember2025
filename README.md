@@ -432,3 +432,37 @@ API Frameowork -
 6. Get a booking with partial updated assertion
 7. delete a booking
 8. get a booking
+
+
+Project - develop - Branch - main - master
+
+Rajesh - QA Lead - UI Automation - develop
+
+ - Harsh - JIRA Story - UI 
+ - Raj - JIRA Story - API
+ - Shailesh - JIRA Story - UI
+
+Harsh - Clone the develop branch (Rajesh)
+      - create a branch feature/login_3932
+      - feature/login_3932 -- develop
+      - Command - git checkout -b feature/login_3932
+      - Command to push online - git push -u origin feature/login3932
+      - Make the require changes - Add a file, modify a file 
+      - Run that locally on all 3 environment - PASS
+      - PR - Pull Request - feature/login3932 --> develop --> QA Lead as APPROVER
+      - develop is updated with Harsh changes
+      Question
+      - When will conflict arise? How to resolve it?
+      Ans - UserA - Deployed to develop
+          - UserB - Taken the latest pull of Develop
+          - UserB - Modify 
+          - UserB - Deployed
+      - git status
+      - git add filename
+      - git commit -m "ADDED"
+      - git push origin develop
+      - git status
+
+      
+
+Individual Cont
