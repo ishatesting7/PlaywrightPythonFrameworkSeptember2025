@@ -466,3 +466,23 @@ Harsh - Clone the develop branch (Rajesh)
       
 
 Individual Cont
+
+
+PlaywrightPytestBDD
+- features/
+    - login.feature
+- steps/
+    - login.steps.py
+- confEnvironment.py
+
+- pages/
+    - basePage.py
+    - login.py
+    - register.py
+
+- tests/
+    - conftest.py
+
+
+LLM + Prompt + ScenarioContext + Playwright MCP part
+Microsoft 365 - 
